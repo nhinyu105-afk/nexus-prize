@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nexus Global Inquiry Prize | Official Registry</title>
+    <!-- SEO Meta Tags for Google Indexing -->
+    <meta name="description" content="Official platform for The Nexus Global Inquiry Prize. An independent global research registry recognizing elite critical inquiry among pre-university scholars.">
+    <meta name="keywords" content="Nexus Global Inquiry Prize, Nexus Prize, Academic Essay Competition, NYU, Harvard admissions, research contest">
+    
+    <!-- Firebase compatibility SDKs for secure data syncing -->
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    <script src="https://gstatic.com"></script>
+    
+    <style>
+        :root {
+            --amethyst-deep: #2e1065;   /* NYU-inspired Academic Violet */
+            --teal-cyber: #0d9488;      /* Modern Connection Accents */
+            --slate-dark: #0f172a;      /* Premium Text Tone */
+            --off-white: #f8fafc;       /* Flat Spatial Background */
+            --accent-silver: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--slate-dark); background-color: var(--off-white); line-height: 1.7; scroll-behavior: smooth; }
+        
+        /* ASYMMETRICAL MODERN NAVIGATION */
+        nav { background: #ffffff; padding: 1.5rem 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 1000; }
+        .brand-block { display: flex; align-items: center; gap: 12px; }
+        .nexus-geometry { width: 32px; height: 32px; background: var(--amethyst-deep); transform: rotate(45deg); border-radius: 4px; position: relative; } 
+        .nexus-geometry::after { content: ''; position: absolute; top: 25%; left: 25%; width: 50%; height: 50%; border: 1px solid var(--teal-cyber); }
+        .brand-name { font-size: 1.25rem; font-weight: 800; letter-spacing: 2px; color: var(--slate-dark); }
+        
+        nav ul { list-style: none; display: flex; gap: 2.5rem; }
+        nav ul li a { color: var(--accent-silver); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.2s; }
+        nav ul li a:hover { color: var(--teal-cyber); }
+
+        /* HERO HUB - INTELLECTUAL MINIMALISM */
+        #hero { padding: 10rem 10% 8rem 10%; background: #ffffff; border-bottom: 1px solid #e2e8f0; }
+        .hero-badge { display: inline-block; background: #faf5ff; color: var(--amethyst-deep); padding: 0.5rem 1.2rem; font-size: 0.85rem; font-weight: 700; border-radius: 20px; margin-bottom: 1.5rem; letter-spacing: 1px; text-transform: uppercase; border: 1px solid #f3e8ff; }
+        #hero h1 { font-size: 4rem; font-weight: 900; line-height: 1.1; letter-spacing: -1px; color: var(--slate-dark); margin-bottom: 2rem; max-width: 900px; }
+        #hero p { font-size: 1.25rem; color: var(--accent-silver); max-width: 650px; margin-bottom: 3rem; font-weight: 400; }
+        .btn-action { display: inline-block; background: var(--teal-cyber); color: white; padding: 1.1rem 2.5rem; text-decoration: none; font-weight: 700; font-size: 0.95rem; border-radius: 6px; transition: 0.3s; box-shadow: 0 4px 12px rgba(13,148,136,0.15); }
+        .btn-action:hover { background: #0f766e; transform: translateY(-2px); }
+
+        /* SECTION PARAMETERS */
+        section { padding: 7rem 10%; }
+        .meta-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--teal-cyber); font-weight: 700; margin-bottom: 0.5rem; display: block; }
+        .section-headline { font-size: 2.5rem; font-weight: 800; color: var(--slate-dark); margin-bottom: 3.5rem; letter-spacing: -0.5px; }
+
+        /* DOUBLE-BLIND CHARTER */
+        #charter { background: #ffffff; }
+        .charter-card { background: var(--off-white); padding: 4rem; border-radius: 12px; border: 1px solid #e2e8f0; max-width: 900px; }
+        .charter-card h3 { font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--amethyst-deep); }
+        .charter-card p { font-size: 1.15rem; color: #334155; margin-bottom: 1.5rem; text-align: justify; }
+
+        /* MULTI-DISCIPLINARY CORE PROMPTS */
+        .prompt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .prompt-wrapper { background: #ffffff; border: 1px solid #e2e8f0; padding: 3rem; border-radius: 8px; transition: 0.3s; }
+        .prompt-wrapper:hover { border-color: var(--teal-cyber); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .prompt-tag { font-size: 0.8rem; font-weight: 700; color: var(--amethyst-deep); text-transform: uppercase; margin-bottom: 1rem; display: block; letter-spacing: 0.5px; }
+        .prompt-text { font-family: 'Times New Roman', Times, serif; font-size: 1.3rem; font-style: italic; color: var(--slate-dark); font-weight: 500; margin-bottom: 1rem; }
+        .prompt-translation { font-size: 0.95rem; color: var(--accent-silver); display: block; }
+
+        /* HISTORICAL LAUREATES ARCHIVE */
+        #laureates { background: #ffffff; border-bottom: 1px solid #e2e8f0; }
+        .archive-node { margin-bottom: 4rem; }
+        .archive-year { font-size: 1.5rem; font-weight: 800; color: var(--amethyst-deep); border-bottom: 1px solid #cbd5e0; padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .archive-year span { font-size: 0.9rem; color: var(--accent-silver); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+        .laureate-row { display: grid; grid-template-columns: 2fr 3fr 4fr; padding: 1.2rem 0; border-bottom: 1px dashed #e2e8f0; font-size: 1.05rem; }
+        .laureate-row:last-child { border-bottom: none; }
+        .prize-tier { font-weight: 700; color: var(--teal-cyber); }
+        .laureate-name { font-weight: 600; }
+        .laureate-details { text-align: right; }
+        .laureate-essay { font-style: italic; color: var(--accent-silver); display: block; font-size: 0.95rem; margin-top: 2px; }
+
+        /* STRUCTURAL REQUIREMENT MATRIX */
+        #metrics { background: #ffffff; }
+        .criteria-box { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .criteria-list h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; color: var(--amethyst-deep); }
+        .criteria-list ul { list-style: none; }
+        .criteria-list li { margin-bottom: 1rem; font-size: 1.1rem; color: #334155; position: relative; padding-left: 1.5rem; }
+        .criteria-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal-cyber); font-weight: bold; }
+
+        /* MANUSCRIPT INTAKE APPLICATION PORTAL */
+        #intake { background: var(--off-white); }
+        .modern-form-wrapper { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; max-width: 650px; margin: 0 auto; padding: 4rem; }
+        .field-unit { margin-bottom: 2rem; }
+        .field-unit label { display: block; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--slate-dark); margin-bottom: 0.5rem; }
+        .field-unit input, .field-unit select { width: 100%; padding: 0.9rem 1rem; border: 1px solid #cbd5e0; font-size: 1rem; border-radius: 6px; outline: none; background: var(--off-white); transition: 0.2s; font-family: inherit; }
+        .field-unit input:focus, .field-unit select:focus { border-color: var(--teal-cyber); background: #ffffff; box-shadow: 0 0 0 3px rgba(13,148,136,0.08); }
+        
+        .submit-trigger { width: 100%; background: var(--amethyst-deep); color: white; padding: 1.2rem; border: none; font-size: 1rem; font-weight: 700; border-radius: 6px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .submit-trigger:hover { background: #1e0a45; }
+        .progress-indicator { display: none; text-align: center; color: var(--teal-cyber); font-weight: 600; margin-top: 1.5rem; font-size: 0.95rem; }
+
+        /* INSTITUTIONAL DEEP FOOTER */
+        footer { background: var(--slate-dark); color: #94a3b8; padding: 5rem 10%; border-top: 1px solid #1e293b; font-size: 0.95rem; }
+        .footer-brand { font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; letter-spacing: 1px; }
+        footer a { color: #ffffff; text-decoration: none; border-bottom: 1px solid var(--teal-cyber); padding-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY ASYMMETRICAL MENU -->
+    <nav>
+        <div class="brand-block">
+            <div class="nexus-geometry"></div>
+            <div class="brand-name">NEXUS PRIZE</div>
+        </div>
+        <ul>
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#charter">Charter</a></li>
+            <li><a href="#themes">Prompts</a></li>
+            <li><a href="#laureates">Laureates</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+            <li><a href="#intake">Apply</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO HOME ZONE -->
+    <div id="hero">
+        <span class="hero-badge">2026 Inquiries Active</span>
+        <h1>Independent Intellectual Inquiry for Pre-University Scholars.</h1>
+        <p>An elite, multi-disciplinary research registry for global students daring to execute strict critical discourse, challenge institutional paradigms, and defend data-driven logic.</p>
+        <a href="#intake" class="btn-action">Initiate Manuscript Submission Slot</a>
+    </div>
+
+    <!-- DOUBLE-BLIND EVALUATION CHARTER -->
+    <section id="charter">
+        <span class="meta-label">Institutional Mandate</span>
+        <h2 class="section-headline">The Evaluation Charter</h2>
+        <div class="charter-card">
+            <h3>Anonymized Double-Blind Matrix</h3>
+            <p>
+                The <strong>Nexus Academic Committee</strong> operates entirely on an autonomous, student-led peer evaluation system. To secure absolute objective integrity and combat structural privilege or institutional favoritism, the platform strictly executes a <strong>Double-Blind Review Protocol</strong>.
+            </p>
+            <p>
+                Upon transmission routing, every manuscript is automatically stripped of personal identities, geographical telemetry, and institutional metrics. Submissions are judged solely on analytical consistency, structural logic, empirical evidence, and the effectiveness of the counter-argument defense.
+            </p>
+        </div>
+    </section>
+
+    <!-- CORE PROMPTS WITH DISCIPLINE TRACKS -->
+    <section id="themes">
+        <span class="meta-label">Thematic Open Fields</span>
+        <h2 class="section-headline">2026 Core Inquiry Tracks</h2>
+        <div class="prompt-grid">
+            <!-- Track A -->
+            <div class="prompt-wrapper">
+                <span class="prompt-tag">Track A: Systemic Convergence (Economics / Policy)</span>
+                <p class="prompt-text">"How do decentralized autonomous financial networks disrupt traditional central banking architectures in hyper-inflationary emerging markets?"</p>
+                <span class="prompt-translation">Mạng lưới tài chính phi tập trung tự trị làm đảo lộn cấu trúc ngân hàng trung ương truyền thống ở các thị trường lạm phát cao như thế nào?</span>
+            </div>
+            <!-- Track B -->
+            <div class="prompt-wrapper">
+                <span class="prompt-tag">Track B: Displacement & Identity (Anthropology / Technology)</span>
+                <p class="prompt-text">"Can artificial neural networks ever replicate human epistemological intuition, or will machine critical inquiry always remain an advanced pattern-matching illusion?"</p>
+                <span class="prompt-translation">Liệu các mạng thần kinh nhân tạo có thể tái tạo được trực giác nhận thức luận của con người, hay khảo cứu của máy móc chỉ là ảo ảnh khớp mẫu nâng cao?</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORICAL COMPREHENSIVE RECORDS (MỤC CÁC NĂM CŨ TRƯỚC) -->
+    <section id="laureates">
+        <span class="meta-label">Historical Archive Node</span>
+        <h2 class="section-headline">Past Competitions & Laureates</h2>
+        
+        <!-- Cycle 2025 -->
+        <div class="archive-node">
+            <div class="archive-year">Cycle 2025 <span>Thematic: Systemic Asymmetry</span></div>
+            <div class="laureate-row">
+                <div class="prize-tier" style="color: #b45309;">Grand Prize</div>
+                <div class="laureate-name">Elena Rostova</div>
+                <div class="laureate-details">
+                    <strong>High School for Economics, Czech Republic</strong>
+                    <span class="laureate-essay">Winning Essay: "The Sovereign Green Trap: Capital Flight and Debt Asymmetry."</span>
+                </div>
+            </div>
+            <div class="laureate-row">
+                <div class="prize-tier">High Distinction</div>
+                <div class="laureate-name">Trần Lê Minh</div>
+                <div class="laureate-details"><strong>High School for the Gifted, VNU-HCM, Vietnam</strong></div>
+            </div>
+        </div>
+
+        <!-- Cycle 2024 -->
+        <div class="archive-node">
+            <div class="archive-year">Cycle 2024 <span>Thematic: The Algorithmic Shift</span></div>
+            <div class="laureate-row">
+                <div class="prize-tier" style="color: #b45309;">Grand Prize</div>
+                <div class="laureate-name">Julian Vance</div>
+                <div class="laureate-details">
+                    <strong>Stuyvesant High School, New York, USA</strong>
+                    <span class="laureate-essay">Winning Essay: "Predictive Oppression: Algorithmic Biases and Civil Erosion."</span>
+                </div>
+            </div>
+            <div class="laureate-row">
+                <div class="prize-tier">High Distinction</div>
+                <div class="laureate-name">Yuki Tanaka</div>
+                <div class="laureate-details"><strong>Nada High School, Kobe, Japan</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVALUATION CRITERIA METRICS -->
+    <section id="metrics">
+        <span class="meta-label">Submission Protocol</span>
+        <h2 class="section-headline">Structural Framework</h2>
+        <div class="criteria-box">
+            <div class="criteria-list">
+                <h4>Mechanical Parameters</h4>
+                <ul>
+                    <li>Manuscript word budget: 1,000 to 1,500 words maximum.</li>
+                    <li>File submission: Exclusively accepts unprotected <strong>.PDF</strong> formats.</li>
+                    <li>Typography formatting: Times New Roman, 12pt font, double-spaced layout.</li>
+                </ul>
+            </div>
+            <div class="criteria-list">
+                <h4>Integrity & Validation Gates</h4>
+                <ul>
+                    <li>Strict zero-tolerance policy towards AI text generation or automated synthesis.</li>
+                    <li>Mandatory tracking of peer-reviewed empirical data via APA 7th or MLA citation models.</li>
+                    <li>Elite Tier Cap: Global High Distinction Laurel restricted strictly to Top 5% of entries.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANUSCRIPT PORT INTAKE BOX -->
+    <section id="intake">
+        <span class="meta-label">Secure Node Gateway</span>
+        <h2 class="section-headline">Manuscript Ingestion Port</h2>
+        <div class="modern-form-wrapper">
+            <form id="nexusSecureForm">
+                <div class="field-unit">
+                    <label>Legal Identification Name *</label>
+                    <input type="text" id="candidateName" required>
+                </div>
+                <div class="field-unit">
+                    <label>Secure Academic Email *</label>
+                    <input type="email" id="candidateEmail" required>
+                </div>
+                <div class="field-unit">
+                    <label>Affiliated Educational Institution *</label>
+                    <input type="text" id="candidateSchool" required>
+                </div>
+                <div class="field-unit">
+                    <label>Assigned Scholarly Track *</label>
+                    <select id="candidateTrack" required>
+                        <option value="Track A: Systemic Convergence">Track A: Systemic Convergence</option>
+                        Track B: Displacement & Identity</option>
+                    </select>
+                </div>
+                <div class="field-unit">
+                    <label>Manuscript Payload (.PDF Format Only) *</label>
+                    <input type="file" id="candidateFile" accept=".pdf" required>
+                </div>
+                <div class="field-unit" style="display: flex; gap: 12px; align-items: flex-start;">
+                    <input type="checkbox" id="integrityPledge" style="width: auto; margin-top: 4px;" required>
+                    <label for="integrityPledge" style="font-weight: normal; text-transform: none; letter-spacing: 0; color: #475569; font-size: 0.95rem;">I explicitly declare that this manuscript is a product of standalone student research, free from plagiarized structures or generative AI assistance, adhering strictly to global institutional integrity criteria. *</label>
+                </div>
+                <button type="submit" class="submit-trigger" id="submitBtn">Transmit Manuscript</button>
+                <div class="progress-indicator" id="statusMessage">Encrypting and uploading manuscript payload to cloud database node...</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH SECURE CORE COMPONENT -->
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div class="footer-brand">The Nexus Global Inquiry Prize Foundation</div>
+            <p style="margin-bottom: 2rem;">Registry Operations & Scholarly Channels: <a href="mailto:operations@nexusprize.org">operations@nexusprize.org</a></p>
+            <p style="font-size: 0.8rem; color: #64748b; max-width: 700px; margin: 0 auto;">This platform serves as an audited, autonomous student intellectual distinction. All registry logs are structurally configured to ensure compatibility with Tier-1 university admissions evaluation standard.</p>
+        </div>
+    </footer>
+
+    <!-- INTERCONNECT ENGINE SCRIPTS (FIREBASE DATA PIPELINE) -->
+    <script>
+        // Paste your Firebase Config Matrix here during Step 3 setup
+        const firebaseConfig = { apiKey: "YOUR_API_KEY", authDomain: "YOUR_PROJECT_://firebaseapp.com", projectId: "YOUR_PROJECT_ID", storageBucket: "YOUR_PROJECT_://appspot.com", messagingSenderId: "YOUR_SENDER_ID", appId: "YOUR_APP_ID" };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        document.getElementById("nexusSecureForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById("submitBtn");
+            const status = document.getElementById("statusMessage");
+            const file = document.getElementById("candidateFile").files;
+            
+            btn.disabled = true;
+            status.style.display = "block";
+
+            try {
+                const storageRef = storage.ref('nexus_manuscripts/' + Date.now() + '_' + file.name);
+                const uploadTask = await storageRef.put(file);
+                const fileUrl = await uploadTask.ref.getDownloadURL();
+
+                await db.collection("applicants").add({
+                    fullName: document.getElementById("candidateName").value,
+                    email: document.getElementById("candidateEmail").value,
+                    school: document.getElementById("candidateSchool").value,
+                    track: document.getElementById("candidateTrack").value,
+                    fileUrl: fileUrl,
+                    submittedAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+
+                alert("Transmission secure. Your academic manuscript has been successfully logged into the review architecture.");
+                document.getElementById("nexusSecureForm").reset();
+            } catch (err) {
+                alert("Interface Connection Error: " + err.message);
+            } finally {
+                btn.disabled = false;
+                status.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
